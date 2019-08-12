@@ -93,7 +93,30 @@ PRODUCT_PACKAGES += \
     LockClock \
     su
 
+<<<<<<< HEAD
 # Optional packages
+=======
+# LongShot
+PRODUCT_PACKAGES += \
+    Longshot
+
+# Accents
+PRODUCT_PACKAGES += \
+    LineageBlackTheme \
+    LineageDarkTheme \
+    LineageBlackAccent \
+    LineageBlueAccent \
+    LineageBrownAccent \
+    LineageCyanAccent \
+    LineageGreenAccent \
+    LineageOrangeAccent \
+    LineagePinkAccent \
+    LineagePurpleAccent \
+    LineageRedAccent \
+    LineageYellowAccent
+
+# Themes
+>>>>>>> 5741c01a... vendor: Import modded Longshot app
 PRODUCT_PACKAGES += \
     Basic \
     LiveWallpapersPicker \
