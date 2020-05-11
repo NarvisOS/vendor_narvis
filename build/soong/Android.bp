@@ -1,14 +1,14 @@
 bootstrap_go_package {
-    name: "soong-gzosp",
-    pkgPath: "gzosp/soong/android",
+    name: "soong-narvis",
+    pkgPath: "narvis/soong/android",
     srcs: [
         "android/variable.go",
     ],
 }
 
 bootstrap_go_package {
-    name: "soong-gzosp-generator",
-    pkgPath: "gzosp/soong/generator",
+    name: "soong-narvis-generator",
+    pkgPath: "narvis/soong/generator",
     deps: [
         "blueprint",
         "blueprint-pathtools",
@@ -23,11 +23,11 @@ bootstrap_go_package {
     pluginFor: ["soong_build"],
 }
 
-gzosp_generator {
+narvis_generator {
     name: "generated_kernel_includes",
 
     // The headers make command
-    cmd: "$(PATH_OVERRIDE_SOONG) $(KERNEL_MAKE_CMD) $(KERNEL_MAKE_FLAGS) -C $(TARGET_KERNEL_SOURCE) O=$(KERNEL_BUILD_OUT_PREFIX)$(genDir) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) headers_install",
+    cmd:"$(PATH_OVERRIDE_SOONG) $(KERNEL_MAKE_CMD) $(KERNEL_MAKE_FLAGS) -C $(TARGET_KERNEL_SOURCE) O=$(KERNEL_BUILD_OUT_PREFIX)$(genDir) ARCH=$(KERNEL_ARCH) $(KERNEL_CROSS_COMPILE) headers_install",
 
     // Directories that can be imported by a cc_* module generated_headers property
     export_include_dirs: [
