@@ -225,3 +225,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 include vendor/narvis/google/GoogleAudio.mk
 
 EXTENDED_POST_PROCESS_PROPS := vendor/narvis/tools/narvis_process_props.py
+
+# Versioning
+include vendor/narvis/config/version.mk
