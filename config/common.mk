@@ -117,7 +117,9 @@ PRODUCT_PACKAGES += \
     Calculator \
     LatinIME \
     BluetoothExt \
-    Launcher3Dark
+    QKSMS \
+     Launcher3Dark 
+    
 
 
 # Extra tools
