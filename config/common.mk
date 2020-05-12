@@ -118,7 +118,8 @@ PRODUCT_PACKAGES += \
     LatinIME \
     BluetoothExt \
     QKSMS \
-     Launcher3Dark 
+     Launcher3Dark \
+    via
     
 
 
@@ -201,7 +202,7 @@ endif
 # Versioning System
 # narvis first version.
 PRODUCT_VERSION_MAJOR = 10
-PRODUCT_VERSION_MINOR = Stable
+PRODUCT_VERSION_MINOR = Beta
 PRODUCT_VERSION_MAINTENANCE = 2.0
 NARVIS_POSTFIX := -$(shell date +"%Y%m%d-%H%M")
 ifdef NARVIS_BUILD_EXTRA
