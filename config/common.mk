@@ -115,7 +115,6 @@ PRODUCT_PACKAGES += \
     LineageYellowAccent
 
 # Themes
->>>>>>> 5741c01a... vendor: Import modded Longshot app
 PRODUCT_PACKAGES += \
     Basic \
     LiveWallpapersPicker \
