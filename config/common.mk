@@ -93,9 +93,8 @@ PRODUCT_PACKAGES += \
     LockClock \
     su
 
-<<<<<<< HEAD
 # Optional packages
-=======
+
 # LongShot
 PRODUCT_PACKAGES += \
     Longshot
