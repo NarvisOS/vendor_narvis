@@ -118,10 +118,8 @@ PRODUCT_PACKAGES += \
     LatinIME \
     BluetoothExt \
     QKSMS \
-     Launcher3Dark \
-    via
-    
-
+    via \
+    Lawnchair
 
 # Extra tools
 PRODUCT_PACKAGES += \
@@ -164,6 +162,10 @@ DEVICE_PACKAGE_OVERLAYS += vendor/narvis/overlay/common
 
 # Boot animation include
 ifneq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
+
+# Include Sakura's theme files
+include vendor/narvis/themes/backgrounds/themes.mk
+
 
 # determine the smaller dimension
 TARGET_BOOTANIMATION_SIZE := $(shell \
@@ -231,3 +233,9 @@ EXTENDED_POST_PROCESS_PROPS := vendor/narvis/tools/narvis_process_props.py
 
 # Versioning
 include vendor/narvis/config/version.mk
+
+# Lawnchair
+PRODUCT_COPY_FILES += \
+    vendor/narvis/prebuilt/common/etc/permissions/privapp-permissions-lawnchair.xml:system/etc/permissions/privapp-permissions-lawnchair.xml \
+    vendor/narvis/prebuilt/common/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml:system/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml 
+
