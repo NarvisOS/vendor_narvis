@@ -181,6 +181,9 @@ PRODUCT_PACKAGES += \
 # Common overlay
 DEVICE_PACKAGE_OVERLAYS += vendor/narvis/overlay/common
 
+# Overlays
+include vendor/overlay/overlays.mk
+
 # Boot animation include
 ifneq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
 
