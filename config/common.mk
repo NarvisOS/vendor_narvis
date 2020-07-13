@@ -139,9 +139,7 @@ PRODUCT_PACKAGES += \
     LatinIME \
     BluetoothExt \
     QKSMS \
-    via \
-    Lawnchair
-
+    via 
 # Extra tools
 PRODUCT_PACKAGES += \
     openvpn \
@@ -183,6 +181,7 @@ DEVICE_PACKAGE_OVERLAYS += vendor/narvis/overlay/common
 
 # Overlays
 include vendor/overlay/overlays.mk
+
 
 # Boot animation include
 ifneq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
@@ -258,8 +257,7 @@ EXTENDED_POST_PROCESS_PROPS := vendor/narvis/tools/narvis_process_props.py
 # Versioning
 include vendor/narvis/config/version.mk
 
-# Lawnchair
-PRODUCT_COPY_FILES += \
-    vendor/narvis/prebuilt/common/etc/permissions/privapp-permissions-lawnchair.xml:system/etc/permissions/privapp-permissions-lawnchair.xml \
-    vendor/narvis/prebuilt/common/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml:system/etc/sysconfig/lawnchair-hiddenapi-package-whitelist.xml 
+# OPLauncher
+include vendor/oplauncher/OPLauncher2.mk
+
 
