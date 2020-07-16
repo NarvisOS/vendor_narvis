@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Versioning System
-NARVIS_VERSION = -0.5
+NARVIS_VERSION = -0.6-WIP
 
 TARGET_PRODUCT_SHORT := $(subst narvis_,,$(NARVIS_BUILD_TYPE))
 

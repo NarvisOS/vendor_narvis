@@ -15,11 +15,11 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/gzosp_arm.mk \
-    $(LOCAL_DIR)/gzosp_arm64.mk \
-    $(LOCAL_DIR)/gzosp_x86.mk
+    $(LOCAL_DIR)/narvis_arm.mk \
+    $(LOCAL_DIR)/narvis_arm64.mk \
+    $(LOCAL_DIR)/narvis_x86.mk
 
 COMMON_LUNCH_CHOICES := \
-    gzosp_arm-userdebug \
-    gzosp_arm64-userdebug \
-    gzosp_x86-userdebug
+    narvis_arm-userdebug \
+    narvis_arm64-userdebug \
+    narvis_x86-userdebug
