@@ -1,4 +1,5 @@
-# Copyright (C) 2016-2017 AOSiP
+#
+# Copyright (C) 2020 NarvisOS
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -13,26 +14,24 @@
 # limitations under the License.
 
 # Versioning System
-NARVIS_VERSION = -0.6-WIP
-
-TARGET_PRODUCT_SHORT := $(subst narvis_,,$(NARVIS_BUILD_TYPE))
+# narvis first version.
+PRODUCT_VERSION_MAJOR = 1
+PRODUCT_VERSION_MINOR = 0
+#PRODUCT_VERSION_MAINTENANCE = 1.0
+NARVIS_POSTFIX := -$(shell date +"%Y%m%d-%H%M")
+ifdef NARVIS_BUILD_EXTRA
+    NARVIS_POSTFIX := -$(NARVIS_BUILD_EXTRA)
+endif
 
 ifndef NARVIS_BUILD_TYPE
-    NARVIS_BUILD_TYPE := UNOFFICIAL
+    NARVIS_BUILD_TYPE := Unofficial
 endif
 
 # Set all versions
-BUILD_DATE := $(shell date -u +%Y%m%d)
-BUILD_TIME := $(shell date -u +%H%M)
-NARVIS_BUILD_DATE := $(BUILD_DATE)-$(BUILD_TIME)
-NARVIS_BUILD_VERSION := NarvisOS$(NARVIS_VERSION)-$(NARVIS_BUILD)-$(NARVIS_BUILD_DATE)-$(NARVIS_BUILD_TYPE)
-ROM_FINGERPRINT := NarvisOS/$(PLATFORM_VERSION)/$(TARGET_PRODUCT_SHORT)/$(BUILD_TIME)
+NARVIS_VERSION := Narvis-$(NARVIS_BUILD)-$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR)$(NARVIS_POSTFIX)-$(NARVIS_BUILD_TYPE)
 
-PRODUCT_SYSTEM_DEFAULT_PROPERTIES += \
-  ro.narvis.build.version=$(NARVIS_VERSION) \
-  ro.narvis.build.date=$(BUILD_DATE) \
-  ro.narvis.buildtype=$(NARVIS_BUILD_TYPE) \
-  ro.narvis.fingerprint=$(ROM_FINGERPRINT) \
-  ro.narvis.version=$(NARVIS_VERSION) \
-  ro.narvis.device=$(NARVIS_BUILD) \
-  ro.modversion=$(NARVIS_VERSION)
+PRODUCT_PROPERTY_OVERRIDES += \
+    BUILD_DISPLAY_ID=$(BUILD_ID) \
+    narvis.ota.version=$(PRODUCT_VERSION_MAJOR).$(PRODUCT_VERSION_MINOR).$(PRODUCT_VERSION_MAINTENANCE) \
+    ro.narvis.version=$(NARVIS_VERSION) \
+    ro.narvis.buildtype=$(NARVIS_BUILD_TYPE)

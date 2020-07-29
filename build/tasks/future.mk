@@ -17,7 +17,7 @@
 # limitations under the License.
 
 # -----------------------------------------------------------------
-NARVIS_TARGET_PACKAGE := $(PRODUCT_OUT)/$(NARVIS_BUILD_VERSION).zip
+NARVIS_TARGET_PACKAGE := $(PRODUCT_OUT)/$(NARVIS_VERSION).zip
 
 .PHONY: otapackage future bacon
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
