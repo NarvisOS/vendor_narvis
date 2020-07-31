@@ -24,7 +24,7 @@ ifdef NARVIS_BUILD_EXTRA
 endif
 
 ifndef NARVIS_BUILD_TYPE
-    NARVIS_BUILD_TYPE := Unofficial
+    NARVIS_BUILD_TYPE := Legacy
 endif
 
 # Set all versions
