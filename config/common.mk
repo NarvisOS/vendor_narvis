@@ -235,4 +235,15 @@ include vendor/narvis/config/version.mk
 # OPLauncher
 include vendor/oplauncher/OPLauncher2.mk
 
-
+#Add option for Gapps
+ifeq ($(WITH_GAPPS),true)
+      GAPPS_VARIANT := micro
+      GAPPS_FORCE_PACKAGE_OVERRIDES := true
+      GAPPS_PRODUCT_PACKAGES += KeyboardGoogle
+      GAPPS_PRODUCT_PACKAGES += WebViewGoogle
+      GAPPS_PACKAGE_OVERRIDES := KeyboardGoogle
+      GAPPS_FORCE_DIALER_OVERRIDES := true
+      GAPPS_FORCE_WEBVIEW_OVERRIDES := true
+      WITH_DEXPREOPT := true
+      include vendor/opengapps/build/opengapps-packages.mk
+endif
