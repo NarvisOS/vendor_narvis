@@ -186,8 +186,6 @@ include vendor/overlay/overlays.mk
 # Boot animation include
 ifneq ($(TARGET_SCREEN_WIDTH) $(TARGET_SCREEN_HEIGHT),$(space))
 
-# Include Sakura's theme files
-include vendor/narvis/themes/backgrounds/themes.mk
 
 
 # determine the smaller dimension
@@ -237,13 +235,5 @@ include vendor/oplauncher/OPLauncher2.mk
 
 #Add option for Gapps
 ifeq ($(WITH_GAPPS),true)
-      GAPPS_VARIANT := micro
-      GAPPS_FORCE_PACKAGE_OVERRIDES := true
-      GAPPS_PRODUCT_PACKAGES += KeyboardGoogle
-      GAPPS_PRODUCT_PACKAGES += WebViewGoogle
-      GAPPS_PACKAGE_OVERRIDES := KeyboardGoogle
-      GAPPS_FORCE_DIALER_OVERRIDES := true
-      GAPPS_FORCE_WEBVIEW_OVERRIDES := true
-      WITH_DEXPREOPT := true
-      include vendor/opengapps/build/opengapps-packages.mk
+include vendor/gapps/config.mk
 endif
