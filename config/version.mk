@@ -25,6 +25,8 @@ endif
 
 ifndef NARVIS_BUILD_TYPE
     NARVIS_BUILD_TYPE := Legacy
+    PRODUCT_PROPERTY_OVERRIDES += \
+    ro.narvis.build_maintainer=friday
 endif
 
 # Set all versions
